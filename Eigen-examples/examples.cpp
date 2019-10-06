@@ -48,3 +48,76 @@ void exInstance() {
 	std::cout << vec4 << std::endl;
 	std::cout << std::endl;
 }
+
+void exMultiply() {
+	std::cout << "-------- Multiplying matricies together --------" << std::endl;
+	std::cout << "mat[number] are arbitrary matricies." << std::endl;
+	std::cout << "mat1 is a dynamic 2 by 2 integer matrix." << std::endl;
+	Eigen::MatrixXi mat1(2, 2);
+	mat1 << 2, 3,
+		    5, 7;
+	std::cout << "mat 1 has the values:" << std::endl;
+	std::cout << mat1 << std::endl;
+	std::cout << "ident2 is a dynamic 2 by 2 integer identity matrix:" << std::endl;
+	Eigen::MatrixXi ident2 = Eigen::MatrixXi::Identity(2, 2);
+	std::cout << ident2 << std::endl;
+	std::cout << "mat1 * ident2 == mat1:" << std::endl;
+	std::cout << mat1 * ident2 << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "mat2 is a dynamic 3 by 3 integer matrix." << std::endl;
+	Eigen::MatrixXi mat2(3, 3);
+	mat2 << 2, -3,  1,
+		    5,  7, -9,
+		   -4,  6,  8;
+	std::cout << "mat2 has the values:" << std::endl;
+	std::cout << mat2 << std::endl;
+	std::cout << "mat1 * mat2 is not good since mat1's width and mat2's height does not match." << std::endl;
+	//std::cout << mat1 * mat2 << std::endl;
+	std::cout << "mat3 is a dynamic 2 by 3 integer matrix." << std::endl;
+	Eigen::MatrixXi mat3(2, 3);
+	mat3 << 1, 2, 3,
+		    4, 5, 6;
+	std::cout << "mat3 has the values:" << std::endl;
+	std::cout << mat3 << std::endl;
+	std::cout << "mat3 * mat2 is valid:" << std::endl;
+	std::cout << mat3 * mat2 << std::endl;
+	std::cout << "but mat2 * mat3 is not valid." << std::endl;
+	//std::cout << mat2 * mat3 << std::endl;
+	std::cout << "mat4 is a dynamic 3 by 2 integer matrix." << std::endl;
+	Eigen::MatrixXi mat4(3, 2);
+	mat4 << 1, 2,
+		    3, 4,
+		    5, 6;
+	std::cout << "mat4 has the values:" << std::endl;
+	std::cout << mat4 << std::endl;
+	std::cout << "mat3 * mat4 is valid:" << std::endl;
+	std::cout << mat3 * mat4 << std::endl;
+	std::cout << "mat4 * mat3 is also valid:" << std::endl;
+	std::cout << mat4 * mat3 << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "Here is an example of converting a vector into a new basis using a square change of basis matrix and converting it back." << std::endl;
+	std::cout << "trans1 is the change of basis matrix:" << std::endl;
+	Eigen::MatrixXd trans1(3, 3);
+	trans1 << 2,  7, 13,
+		      3,  9, 17,
+		      5, 11, 19;
+	std::cout << trans1 << std::endl;
+	std::cout << "vec1 is the vector in the standard basis:" << std::endl;
+	Eigen::VectorXd vec1(3);
+	vec1 << 1,
+		    1,
+		    1;
+	std::cout << vec1 << std::endl;
+	std::cout << "vec2 is vec1 in the new basis:" << std::endl;
+	Eigen::VectorXd vec2 = trans1 * vec1;
+	std::cout << vec2 << std::endl;
+	std::cout << "trans1inv is the inverse of trans1:" << std::endl;
+	Eigen::MatrixXd trans1inv = trans1.inverse();
+	std::cout << trans1inv << std::endl;
+	std::cout << "vec3 is vec2 in the original basis (should be equal to vec1):" << std::endl;
+	Eigen::VectorXd vec3 = trans1inv * vec2;
+	std::cout << vec3 << std::endl;
+	std::cout << std::endl;
+}

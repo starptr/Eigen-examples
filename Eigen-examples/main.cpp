@@ -7,7 +7,7 @@
 int main()
 {
 	/*
-	All of these functions are declared and defined in ex_[name].h and ex_[name].cpp files.
+	All of these functions are declared and defined in examples.h and examples.cpp files.
 	*/
 	exInstance();
 	exMultiply();
