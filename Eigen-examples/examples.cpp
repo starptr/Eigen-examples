@@ -1,7 +1,7 @@
 #include <iostream>
 #include <Eigen/Dense>
 
-#include "ex_instance.h"
+#include "examples.h"
 
 void exInstance() {
 	std::cout << "-------- Representing a matrix and a vector --------" << std::endl;
@@ -46,9 +46,5 @@ void exInstance() {
 	vec4 << 2,
 		    3;
 	std::cout << vec4 << std::endl;
-	std::cout << std::endl;
-
-	std::cout << "-Simple multiplication example (mat4 * vec4):" << std::endl;
-	std::cout << mat4 * vec4 << std::endl;
 	std::cout << std::endl;
 }
