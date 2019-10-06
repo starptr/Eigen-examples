@@ -1,12 +1,14 @@
 #include <iostream>
+#include <string>
 #include <Eigen/Dense>
-using Eigen::MatrixXd;
+
+#include "ex_instance.h"
+
 int main()
 {
-	MatrixXd m(2, 2);
-	m(0, 0) = 3;
-	m(1, 0) = 2.5;
-	m(0, 1) = -1;
-	m(1, 1) = m(1, 0) + m(0, 1);
-	std::cout << m << std::endl;
+	/*
+	All of these functions are declared and defined in ex_[name].h and ex_[name].cpp files.
+	*/
+	exInstance();
+
 }
