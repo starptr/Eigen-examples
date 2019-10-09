@@ -1,0 +1,49 @@
+#include <iostream>
+#include "Eigen/Dense"
+
+int main()
+{
+    //creates a matrix and a vector
+    Eigen::MatrixXf A = Eigen::MatrixXf::Random(12, 2);
+    Eigen::VectorXf b = Eigen::VectorXf::Random(12);
+
+    //show the data
+    std::cout << "Here is the matrix A:\n" << A << std::endl;
+    std::cout << "Here is the right hand side b:\n" << b << std::endl;
+    //culculate the linear least squares
+    std::cout << "The solution using the QR decomposition is:\n"
+              << A.colPivHouseholderQr().solve(b) << std::endl;
+    return 0;
+}
+
+/*output
+
+Here is the matrix A:
+ 0.380002  0.759988
+0.0108368 -0.361039
+ 0.182981  0.961136
+  0.10957  -0.82999
+-0.243142  0.815258
+-0.484536 -0.794981
+-0.585236  0.843956
+ 0.252524 0.0151024
+-0.319746  0.744578
+ 0.687704 -0.333481
+-0.862444  0.384819
+-0.180186  0.113892
+Here is the right hand side b:
+ -0.27617
+-0.936012
+ 0.717022
+-0.802031
+ 0.754135
+-0.101482
+-0.135615
+ 0.212536
+ 0.855675
+ 0.328571
+-0.209269
+-0.123062
+The solution using the QR decomposition is:
+0.209824
+0.515507*/
