@@ -1,0 +1,22 @@
+#include <iostream>
+//for the Eigen library
+#include <Eigen/Dense>
+//for creating metrix
+using Eigen::MatrixXd;
+
+int main()
+{
+    //creates a metrix m which has 2 rows and 2 columns
+    MatrixXd m(2,2);
+    m << 1, 3,
+         5, 7;
+
+    //show the metrix m
+    std::cout << "Here is a matrix m:\n" <<  m << std::endl <<std::endl;
+    //show the metrix m + m (metrix addition)
+    std::cout << "Here is a metrix m+m:\n" << m + m << std::endl << std::endl;
+    //show the metrix 2.5 * m (metrix scalar multiplication)
+    std::cout << "Scalar multiplication (2.5 * m): \n" << 2.5 * m << std::endl << std::endl;
+    //show the metrix m * m (2 metrixes multiplication)
+    std::cout << "Matrix-matrix multiplication (m * m):\n" <<  m * m << std::endl <<std::endl;
+}
