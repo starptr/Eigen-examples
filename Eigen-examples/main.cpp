@@ -9,6 +9,27 @@ int main()
 	/*
 	All of these functions are declared and defined in examples.h and examples.cpp files.
 	*/
+	
+       //creates metrixes m which has 2 rows and 2 columns
+       MatrixXd m(2, 2);
+       m << 1, 3,
+            5, 7;
+
+       MatrixXd n(2, 2);
+       n << 1, 2,
+            3, 4;
+	
+	//show the metrix m
+        std::cout << "Here is a matrix m:\n" <<  m << std::endl <<std::endl;
+	std::cout << "Here is a matrix n:\n" <<  n << std::endl <<std::endl;
+	
 	exInstance();
 	exMultiply();
+	
+	//culculate matrix + matrix
+	addition(m,n);
+	//calculate scalar * matrix
+	scalarMultiplication(2.5, m);
+	//calculate matrix * matrix
+	matrixMultiplication(m,m);
 }
