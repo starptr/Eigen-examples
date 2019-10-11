@@ -3,6 +3,7 @@
 #include <Eigen/Dense>
 //for creating metrix
 using Eigen::MatrixXd;
+using Eigen::VectorXd;
 
 //function for calculating matrix + matrix
 void addition(MatrixXd m, MatrixXd n)
@@ -21,4 +22,10 @@ void scalarMultiplication(int scalar, MatrixXd m){
 void matrixMultiplication(MatrixXd m, MatrixXd n){
     //show the metrix m * m (2 metrixes multiplication)
     std::cout << "Matrix-matrix multiplication :\n" <<  m * n << std::endl <<std::endl;
+}
+
+void linearEqua(MatrixXd m, VectorXd v){
+    //solve system of linear equations and make the solution call x
+    VectorXd x = m.colPivHouseholderQr().solve(v);
+    std::cout << "The solution of mx=b is:\n" << x << std::endl << std::endl;
 }
