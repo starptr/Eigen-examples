@@ -12,7 +12,8 @@ int main()
 	*/
 	
 	//make a 2*2 matrix
-	matrix2_2(double 1, double 2, double 2.5, double 7);
+	matrix2_2(1.0, 2.0, 2.5, 7.0);
+	vector2(2.0,3.0)
 	
 	
         //creates metrixes m which has 2 rows and 2 columns
