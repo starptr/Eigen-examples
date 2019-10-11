@@ -3,6 +3,7 @@
 #include <Eigen/Dense>
 
 #include "examples.h"
+#include "matrixCal.cpp"
 
 int main()
 {
