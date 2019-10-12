@@ -1,3 +1,10 @@
+/* DO NOT USE THE FILE
+DO NOT USE THE FILE
+DO NOT USE THE FILE
+DO NOT USE THE FILE
+DO NOT USE THE FILE
+
+
 #include <iostream>
 //for the Eigen library
 #include <Eigen/Dense>
@@ -6,7 +13,7 @@ using Eigen::MatrixXd;
 //for crating vector
 using Eigen::VectorXd;
 
-/*//function for calculating matrix + matrix
+//function for calculating matrix + matrix
 void addition(MatrixXd m, MatrixXd n)
 {
     //show the metrix m + m (metrix addition)
@@ -23,7 +30,7 @@ void scalarMultiplication(int scalar, MatrixXd m){
 void matrixMultiplication(MatrixXd m, MatrixXd n){
     //show the metrix m * m (2 metrixes multiplication)
     std::cout << "Matrix-matrix multiplication :\n" <<  m * n << std::endl <<std::endl;
-}/*
+}
 
 //function for solving the system of the linear equation
 void linearEqua(MatrixXd m, VectorXd v){
@@ -31,3 +38,4 @@ void linearEqua(MatrixXd m, VectorXd v){
     VectorXd x = m.colPivHouseholderQr().solve(v);
     std::cout << "The solution of mx=b is:\n" << x << std::endl << std::endl;
 }
+*/
