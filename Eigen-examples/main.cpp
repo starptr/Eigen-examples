@@ -12,6 +12,7 @@ int main()
 	*/
 	
 	exInstance();
+	exAddition();
 	exMultiply();
 		
         //creates metrixes m which has 2 rows and 2 columns
@@ -34,8 +35,6 @@ int main()
         std::cout << "Here is a matrix m:\n" <<  m << std::endl <<std::endl;
 	std::cout << "Here is a matrix n:\n" <<  n << std::endl <<std::endl;
 	
-	//culculate matrix + matrix
-	addition(m,n);
 	//calculate scalar * matrix
 	scalarMultiplication(2.5, m);
 	//calculate matrix * matrix
