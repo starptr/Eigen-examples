@@ -15,5 +15,5 @@ int main()
 	exAddition();
 	exScalarMultiply();
 	exMultiply();
-	solveLinearEq();
+	exSolveLinearEq();
 }
