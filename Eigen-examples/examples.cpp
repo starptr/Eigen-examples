@@ -236,3 +236,62 @@ void exSolveLinearEq(){
     std::cout << "Use colPivHouseholderQr()\n";
     std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
 }
+
+void exLinearLeastSquares(){
+    std::cout << "-------- Solving linear least squares systems --------" << std::endl;
+    std::cout << "mat[number] are arbitrary matricies." << std::endl << std::endl;
+
+    //This method gives an error because of the file size
+    /*std::cout << "Using the SVD decomposition, which is the most accurate but the slowest" << std::endl;
+    Eigen::MatrixXf mat1 = Eigen::MatrixXf(3, 2);
+    mat1 << 1, -3,
+            1, 3,
+            1, 1;
+    std::cout << "mat 1 has the values:" << std::endl;
+    std::cout << mat1 << std::endl;
+    Eigen::VectorXf vec1 = Eigen::VectorXf(3);
+    vec1 << -2,
+             4,
+            11;
+    std::cout << "vec1 has the values:" << std::endl;
+    std::cout << vec1 << std::endl;
+    std::cout << "The least squares solution is:" << std::endl;
+    std::cout << mat1.bdcSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(mat1) << std::endl << std::endl;
+    std::cout << "This explains that the the soluction is closest to y=1.32x+3.89" << std::endl << std::endl;*/
+
+    std::cout << "--Using the QR decomposition, which is the fastest but least accurate" << std::endl;
+    Eigen::MatrixXf mat2 = Eigen::MatrixXf(4, 2);
+    mat2 << 1, -3,
+            1, 3,
+            1, 9,
+            1, 1;
+    std::cout << "mat 2 has the values:" << std::endl;
+    std::cout << mat2 << std::endl;
+    Eigen::VectorXf vec2 = Eigen::VectorXf(4);
+    vec2 << -2,
+             4,
+             4,
+            11;
+    std::cout << "vec2 has the values:" << std::endl;
+    std::cout << vec2 << std::endl;
+    std::cout << "The least squares solution is:" << std::endl;
+    std::cout << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
+    std::cout << "This explains that the the solution is closest to y=0.3x+3.5" << std::endl << std::endl;
+
+    std::cout << "--Using normal equations, which is normal" << std::endl;
+    Eigen::MatrixXf mat3 = Eigen::MatrixXf(3, 2);
+    mat3 << 1, -3,
+            1, 3,
+            1, 1;
+    std::cout << "mat 3 has the values:" << std::endl;
+    std::cout << mat3 << std::endl;
+    Eigen::VectorXf vec3 = Eigen::VectorXf(3);
+    vec3 << -2,
+            4,
+            11;
+    std::cout << "vec3 has the values:" << std::endl;
+    std::cout << vec3 << std::endl;
+    std::cout << "The least squares solution is:" << std::endl;
+    std::cout << (mat3.transpose() * mat3).ldlt().solve(mat3.transpose() * vec3) << std::endl;
+    std::cout << "This explains that the the solution is closest to y=1.32x+3.89" << std::endl << std::endl;
+}
