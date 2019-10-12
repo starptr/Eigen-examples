@@ -97,6 +97,24 @@ void exAddition(){
     std::cout << mat3 - mat4 << std::endl << std::endl;
 }
 
+void exScalarMultiply(){
+    std::cout << "-------- Multiplying matrix with scalar --------" << std::endl;
+    std::cout << "mat[number] are arbitrary matricies." << std::endl;
+    std::cout << "mat1 is a dynamic 2 by 2 integer matrix." << std::endl;
+    Eigen::MatrixXi mat1 = matrix22(2, 3, 5, 7);
+    std::cout << "mat 1 has the values:" << std::endl;
+    std::cout << mat1 << std::endl;
+    std::cout << "7 * mat1:\n";
+    std::cout << 7 * mat1 << std::endl;
+
+    std::cout << "mat2 is a dynamic 3 by 3 integer matrix." << std::endl;
+    Eigen::MatrixXi mat2 = matrix33(2, -3,  1, 5,  7, -9, -4,  6,  8);
+    std::cout << "mat2 has the values:" << std::endl;
+    std::cout << mat2 << std::endl;
+    std::cout << "3 * mat2:\n";
+    std::cout << 3 * mat2 << std::endl << std::endl;
+}
+
 void exMultiply() {
 	std::cout << "-------- Multiplying matricies together --------" << std::endl;
 	std::cout << "mat[number] are arbitrary matricies." << std::endl;
