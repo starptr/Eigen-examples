@@ -21,4 +21,9 @@ Multiply matricies together.
 */
 void exMultiply();
 
+/*
+solving system of linear equations
+ */
+void solveLinearEq();
+
 #endif // !EXAMPLES
