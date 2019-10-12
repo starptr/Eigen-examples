@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Eigen/Dense>
+#include "LinearSystem.h"
 
 #include "examples.h"
 
@@ -295,3 +296,15 @@ void exLinearLeastSquares(){
     std::cout << (mat3.transpose() * mat3).ldlt().solve(mat3.transpose() * vec3) << std::endl;
     std::cout << "This explains that the the solution is closest to y=0.768x+1.641" << std::endl << std::endl;
 }
+
+void exCSVsolver() {
+	std::cout << "-------- Solve linear system whose coefficients are given in a csv file ---------" << std::endl;
+	LinearSystem ex_lin_sys("coef.csv", true);
+	ex_lin_sys.solve();
+	std::cout << "For Ax=b, A:" << std::endl;
+	std::cout << ex_lin_sys.get_A() << std::endl;
+	std::cout << "b:" << std::endl;
+	std::cout << ex_lin_sys.get_b() << std::endl;
+	std::cout << "x:" << std::endl;
+	std::cout << ex_lin_sys.get_x() << std::endl;
+	std::cout << std::endl;

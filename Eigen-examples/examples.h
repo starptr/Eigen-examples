@@ -31,4 +31,9 @@ linear least squares using Eigen library and validate the results independently
  */
 void exLinearLeastSquares();
 
+/*
+Demonstrate linear system as CSV coefficient wrapper
+*/
+void exCSVsolver();
+
 #endif // !EXAMPLES
