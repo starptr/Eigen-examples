@@ -93,7 +93,7 @@ void exAddition(){
     std::cout << "mat2 has the values;" << std::endl;
     std::cout << mat2 << std::endl;
     std::cout << "mat1 + mat2:" << std::endl;
-    std::cout << mat1 + mat2 << std::endl << std::endl;
+    std::cout << mat1 + mat2 << std::endl;
     std::cout << "mat1 - mat2:" << std::endl;
     std::cout << mat1 - mat2 << std::endl << std::endl;
 
@@ -107,7 +107,7 @@ void exAddition(){
     std::cout << "mat4 has the values:" << std::endl;
     std::cout << mat4 << std::endl;
     std::cout << "mat3 + mat4:" << std::endl;
-    std::cout << mat3 + mat4 << std::endl << std::endl;
+    std::cout << mat3 + mat4 << std::endl;
     std::cout << "mat3 - mat4:" << std::endl;
     std::cout << mat3 - mat4 << std::endl << std::endl;
 }
@@ -120,7 +120,7 @@ void exScalarMultiply(){
     std::cout << "mat 1 has the values:" << std::endl;
     std::cout << mat1 << std::endl;
     std::cout << "7 * mat1:\n";
-    std::cout << 7 * mat1 << std::endl;
+    std::cout << 7 * mat1 << std::endl << std::endl;
 
     std::cout << "mat2 is a dynamic 3 by 3 integer matrix." << std::endl;
     Eigen::MatrixXi mat2 = matrix33(2, -3,  1, 5,  7, -9, -4,  6,  8);
@@ -217,7 +217,7 @@ void exSolveLinearEq(){
     std::cout << vec1 << std::endl;
     std::cout << "Use colPivHouseholderQr(), which is accurate but slow." << std::endl;
     Eigen::VectorXf x = mat1.colPivHouseholderQr().solve(vec1);
-    std::cout << "The solution is:\n" << x << std::endl;
+    std::cout << "The solution is:\n" << x << std::endl << std::endl;
 
     std::cout << "mat2 is a dynamic 3 by 3 integer matrix." << std::endl;
     Eigen::MatrixXf mat2 = matrix33f(1,1,1,6,-4,5,5,2,2);
