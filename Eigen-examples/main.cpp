@@ -16,4 +16,5 @@ int main()
 	exScalarMultiply();
 	exMultiply();
 	exSolveLinearEq();
+	exLinearLeastSquares();
 }
