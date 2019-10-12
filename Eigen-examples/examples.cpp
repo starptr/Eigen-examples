@@ -18,6 +18,21 @@ Eigen::MatrixXi matrix33(int a, int b, int c, int d,int e, int f, int g, int h, 
          g,h,i;
     return m;
 }
+//creates 2 by 2 matrix (float)
+Eigen::MatrixXf matrix22f(int a, int b, int c, int d){
+    Eigen::MatrixXf m(2,2);
+    m << a,b,
+         c,d;
+    return m;
+}
+//creates 3 by 3 matrix (float)
+Eigen::MatrixXf matrix33f(int a, int b, int c, int d,int e, int f, int g, int h, int i){
+    Eigen::MatrixXf m(3,3);
+    m << a,b,c,
+         d,e,f,
+         g,h,i;
+    return m;
+}
 
 void exInstance() {
 	std::cout << "-------- Representing a matrix and a vector --------" << std::endl;
@@ -186,4 +201,38 @@ void exMultiply() {
 	Eigen::VectorXd vec3 = trans1inv * vec2;
 	std::cout << vec3 << std::endl;
 	std::cout << std::endl;
+}
+
+void solveLinearEq(){
+    std::cout << "-------- Solving system of linear equations --------" << std::endl;
+    std::cout << "mat[number] are arbitrary matricies." << std::endl;
+    std::cout << "mat1 is a dynamic 2 by 2 integer matrix." << std::endl;
+    Eigen::MatrixXf mat1 = matrix22f(4, 3, 8, -2);
+    std::cout << "mat1 has the values:" << std::endl;
+    std::cout << mat1 << std::endl;
+    std::cout << "vec1 is the vector:" << std::endl;
+    Eigen::VectorXf vec1(2);
+    vec1 << -2,
+            12;
+    std::cout << vec1 << std::endl;
+    std::cout << "Use colPivHouseholderQr(), which is accurate but slow." << std::endl;
+    Eigen::VectorXf x = mat1.colPivHouseholderQr().solve(vec1);
+    std::cout << "The solution is:\n" << x << std::endl;
+
+    std::cout << "mat2 is a dynamic 3 by 3 integer matrix." << std::endl;
+    Eigen::MatrixXf mat2 = matrix33f(1,1,1,6,-4,5,5,2,2);
+    std::cout << "mat2 has the values:" << std::endl;
+    std::cout << mat2 << std::endl;
+    std::cout << "vec2 is the vector:" << std::endl;
+    Eigen::VectorXf vec2(3);
+    vec2 << 2,
+            31,
+            13;
+    std::cout << vec2 << std::endl;
+    std::cout << "Use ldlt(), which is much faster but lass accurate\n";
+    std::cout << "The solution should be (3, -2, 1)\n";
+    Eigen::VectorXf y = mat2.ldlt().solve(vec2);
+    std::cout << "The solution is:\n" << y << std::endl;
+    std::cout << "Use colPivHouseholderQr()\n";
+    std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
 }
