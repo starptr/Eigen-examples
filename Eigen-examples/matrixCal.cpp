@@ -6,7 +6,7 @@ using Eigen::MatrixXd;
 //for crating vector
 using Eigen::VectorXd;
 
-//function for calculating matrix + matrix
+/*//function for calculating matrix + matrix
 void addition(MatrixXd m, MatrixXd n)
 {
     //show the metrix m + m (metrix addition)
@@ -23,7 +23,7 @@ void scalarMultiplication(int scalar, MatrixXd m){
 void matrixMultiplication(MatrixXd m, MatrixXd n){
     //show the metrix m * m (2 metrixes multiplication)
     std::cout << "Matrix-matrix multiplication :\n" <<  m * n << std::endl <<std::endl;
-}
+}/*
 
 //function for solving the system of the linear equation
 void linearEqua(MatrixXd m, VectorXd v){
