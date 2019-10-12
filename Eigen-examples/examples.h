@@ -24,6 +24,6 @@ void exMultiply();
 /*
 solving system of linear equations
  */
-void solveLinearEq();
+void exSolveLinearEq();
 
 #endif // !EXAMPLES

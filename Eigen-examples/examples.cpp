@@ -203,7 +203,7 @@ void exMultiply() {
 	std::cout << std::endl;
 }
 
-void solveLinearEq(){
+void exSolveLinearEq(){
     std::cout << "-------- Solving system of linear equations --------" << std::endl;
     std::cout << "mat[number] are arbitrary matricies." << std::endl;
     std::cout << "mat1 is a dynamic 2 by 2 integer matrix." << std::endl;
