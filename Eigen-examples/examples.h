@@ -12,6 +12,11 @@ void exInstance();
 void exAddition();
 
 /*
+Multiply scalar and matrix
+ */
+void exScalarMultiply();
+
+/*
 Multiply matricies together.
 */
 void exMultiply();
