@@ -26,4 +26,9 @@ solving system of linear equations
  */
 void exSolveLinearEq();
 
+/*
+linear least squares using Eigen library and validate the results independently
+ */
+void exLinearLeastSquares();
+
 #endif // !EXAMPLES
