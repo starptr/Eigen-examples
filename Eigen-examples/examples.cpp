@@ -3,6 +3,22 @@
 
 #include "examples.h"
 
+//creates 2 by 2 matrix
+Eigen::MatrixXi matrix22(int a, int b, int c, int d){
+    Eigen::MatrixXi m(2,2);
+    m << a,b,
+         c,d;
+    return m;
+}
+//creates 3 by 3 matrix
+Eigen::MatrixXi matrix33(int a, int b, int c, int d,int e, int f, int g, int h, int i){
+    Eigen::MatrixXi m(3,3);
+    m << a,b,c,
+         d,e,f,
+         g,h,i;
+    return m;
+}
+
 void exInstance() {
 	std::cout << "-------- Representing a matrix and a vector --------" << std::endl;
 	std::cout << "-mat1, mat2, mat3, and mat4 all represent 2 by 2 matricies." << std::endl;
@@ -47,6 +63,38 @@ void exInstance() {
 		    3;
 	std::cout << vec4 << std::endl;
 	std::cout << std::endl;
+}
+
+void exAddition(){
+    std::cout << "-------- Adding matricies together ---------" << std::endl;
+    std::cout << "mat[number] are arbitrary matricies." << std::endl;
+    std::cout << "mat1 and mat2 are dynamic 2 by 2 integer matricies." << std::endl;
+    //create matrix mat1
+    Eigen::MatrixXi mat1 = matrix22(1,3,5,7);
+    std::cout << "mat1 has the values;" << std::endl;
+    std::cout << mat1 << std::endl;
+    //create matrix mat2
+    Eigen::MatrixXi mat2 = matrix22(2,4,6,8);
+    std::cout << "mat2 has the values;" << std::endl;
+    std::cout << mat2 << std::endl;
+    std::cout << "mat1 + mat2:" << std::endl;
+    std::cout << mat1 + mat2 << std::endl << std::endl;
+    std::cout << "mat1 - mat2:" << std::endl;
+    std::cout << mat1 - mat2 << std::endl << std::endl;
+
+
+    std::cout << "mat3 is a dynamic 3 by 3 integer matrix." << std::endl;
+    Eigen::MatrixXi mat3 = matrix33(2, -3, 1, 5, 7, -9, -4, 6, 8);
+    std::cout << "mat3 has the values:" << std::endl;
+    std::cout << mat3 << std::endl;
+    std::cout << "mat4 is a dynamic 3 by 3 integer matrix." << std::endl;
+    Eigen::MatrixXi mat4 = matrix33(5, -2, -1, 2, -9, 3, -6, -1, 9);
+    std::cout << "mat4 has the values:" << std::endl;
+    std::cout << mat4 << std::endl;
+    std::cout << "mat3 + mat4:" << std::endl;
+    std::cout << mat3 + mat4 << std::endl << std::endl;
+    std::cout << "mat3 - mat4:" << std::endl;
+    std::cout << mat3 - mat4 << std::endl << std::endl;
 }
 
 void exMultiply() {
