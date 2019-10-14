@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Eigen/Dense>
 #include "LinearSystem.h"
+#include "LinearTransformation.h"
 
 #include "examples.h"
 
@@ -311,5 +312,17 @@ void exCSVsolver() {
 }
 
 void exLinearTransformation() {
-
+	std::cout << "-------- Manipulate matrix as a linear transformation ---------" << std::endl;
+	std::cout << "Matricies can be interpreted as a linear transformation between subspaces from V to W." << std::endl;
+	std::cout << "The row count (height) of the matrix is the dimension of V, and the col count (width) of the matrix is the dimension of W." << std::endl;
+	Eigen::MatrixXd A(2, 3);
+	A << 1,  0, -2,
+		 0, -1,  2;
+	std::cout << "Take this matrix A for example: " << std::endl << A << std::endl;
+	std::cout << "Note that each of the elementary vectors e1, e2, and e3 in the input space, R^3, lands on e1, -e2, and <-2, 2> in the output space, R^2." << std::endl;
+	std::cout << "Thus, we can see that nullity is 1 and rank is 2." << std::endl;
+	LinearTransformation T(A);
+	std::cout << "T, the linear transformation representation of matrix A, has the nullity: " << T.getNullity() << std::endl;
+	std::cout << "... and rank: " << T.getRank() << std::endl;
+	
 }
