@@ -4,4 +4,4 @@
 
 CS 110C review project for the C++ Eigen library
 
-Short Review Paper, Google Docs Link: https://docs.google.com/document/d/1VQuQOzUga5a6Y_bKSRA03M8iXqFFShlFYwNoDYFrZ4Y/edit?usp=sharing 
+[Short Review Paper, Link to Google Docs](https://docs.google.com/document/d/1VQuQOzUga5a6Y_bKSRA03M8iXqFFShlFYwNoDYFrZ4Y/edit?usp=sharing)
