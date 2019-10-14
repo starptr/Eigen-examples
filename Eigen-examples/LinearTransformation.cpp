@@ -13,7 +13,6 @@ LinearTransformation::~LinearTransformation() {}
 void LinearTransformation::refresh_T(Eigen::MatrixXd T) {
 	this->T = T;
 	T_decomp.compute(T);
-	T_eigens.compute(T);
 }
 
 Eigen::MatrixXd LinearTransformation::getTransformation() {
@@ -40,10 +39,6 @@ int LinearTransformation::getRank() {
 	return T_decomp.rank();
 }
 
-Eigen::VectorXcd LinearTransformation::getEigenvals() {
-	return T_eigens.eigenvalues();
-}
-
 bool LinearTransformation::isInvertible() {
 	return T_decomp.isInvertible();
 }
@@ -54,10 +49,6 @@ Eigen::MatrixXd LinearTransformation::getBasisOfKernel() {
 
 Eigen::MatrixXd LinearTransformation::getBasisOfImage() {
 	return T_decomp.image(T);
-}
-
-Eigen::MatrixXcd LinearTransformation::getEigenvecs() {
-	return T_eigens.eigenvectors();
 }
 
 LinearTransformation LinearTransformation::getInverse() {

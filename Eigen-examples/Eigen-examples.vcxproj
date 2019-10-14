@@ -129,12 +129,14 @@
     <ClCompile Include="examples.cpp" />
     <ClCompile Include="LinearSystem.cpp" />
     <ClCompile Include="LinearTransformation.cpp" />
+    <ClCompile Include="LinearTransformationSquare.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples.h" />
     <ClInclude Include="LinearSystem.h" />
     <ClInclude Include="LinearTransformation.h" />
+    <ClInclude Include="LinearTransformationSquare.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="coef.csv" />

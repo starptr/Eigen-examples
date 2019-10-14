@@ -6,11 +6,11 @@
 
 class LinearTransformation
 {
+protected:
 	Eigen::MatrixXd T;
 	Eigen::FullPivLU<Eigen::MatrixXd> T_decomp;
-	Eigen::EigenSolver<Eigen::MatrixXd> T_eigens;
 
-	void refresh_T(Eigen::MatrixXd T);
+	virtual void refresh_T(Eigen::MatrixXd T);
 
 public:
 	//dim is the dimension of the square identity transformation
@@ -32,16 +32,12 @@ public:
 	int getNullity();
 	//Returns rank (i.e. dimension of image) of T
 	int getRank();
-	//Returns a complex column vector containing eigenvalues, repeated by algebraic multiplicity
-	Eigen::VectorXcd getEigenvals();
 	//Returns whether T has an inverse
 	bool isInvertible();
 	//Returns a matrix whose columns form a basis of the kernel of T
 	Eigen::MatrixXd getBasisOfKernel();
 	//Returns a matrix whose columns form a basis of the image of T
 	Eigen::MatrixXd getBasisOfImage();
-	//Returns a matrix whose columns are the complex eigenvectors with corresponding eigenvalues
-	Eigen::MatrixXcd getEigenvecs();
 	
 	//Returns the inverse of T, if it exists
 	LinearTransformation getInverse();
