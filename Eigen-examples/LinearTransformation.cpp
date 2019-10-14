@@ -24,11 +24,11 @@ void LinearTransformation::setTransformation(Eigen::MatrixXd T) {
 }
 
 int LinearTransformation::getDimDomain() {
-	return T.rows();
+	return T.cols();
 }
 
 int LinearTransformation::getDimCodomain() {
-	return T.cols();
+	return T.rows();
 }
 
 int LinearTransformation::getNullity() {
