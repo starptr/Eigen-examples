@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Eigen/Dense>
 #include "LinearSystem.h"
+#include "LinearTransformation.h"
+#include "LinearTransformationSquare.h"
 
 #include "examples.h"
 
