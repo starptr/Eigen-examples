@@ -2,6 +2,7 @@
 #include <Eigen/Dense>
 #include "LinearSystem.h"
 #include "LinearTransformation.h"
+#include "LinearTransformationSquare.h"
 
 #include "examples.h"
 
@@ -236,7 +237,8 @@ void exSolveLinearEq(){
     Eigen::VectorXf y = mat2.ldlt().solve(vec2);
     std::cout << "The solution is:\n" << y << std::endl;
     std::cout << "Use colPivHouseholderQr()\n";
-    std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
+	std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
+	std::cout << std::endl;
 }
 
 void exLinearLeastSquares(){
@@ -324,5 +326,19 @@ void exLinearTransformation() {
 	LinearTransformation T(A);
 	std::cout << "T, the linear transformation representation of matrix A, has the nullity: " << T.getNullity() << std::endl;
 	std::cout << "... and rank: " << T.getRank() << std::endl;
-	
+	std::cout << "The dim of domain and codomain are: " << T.getDimDomain() << " and " << T.getDimCodomain() << std::endl;
+	std::cout << "ker(A) is the subspace spanned by the solutions to Ax=0, which is, in this case, spanned by <2,2,1>" << std::endl;
+	std::cout << "A matrix whose columns form the basis of ker(T) is: " << std::endl << T.getBasisOfKernel() << std::endl;
+	std::cout << "Likewise, img(A) is R^2." << std::endl;
+	std::cout << "A matrix whose columns form the basis of img(T) is: " << std::endl << T.getBasisOfImage() << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "Here is another matrix B, representing a rotation along <1,1,1>, right-hand rule." << std::endl;
+	Eigen::MatrixXd B(3, 3);
+	B << 0, 0, 1,
+		 1, 0, 0,
+		 0, 1, 0;
+	LinearTransformationSquare T2(B);
+	std::cout << "Since T2 is a rotation in R^3, of the 3 eigenvalues, 2 should be complex and 1 should be real and equal to 1:" << std::endl << T2.getEigenvals() << std::endl;
+	std::cout << "The eigenvector corresponding to the real eigenvalue should constitute a basis spanning <1,1,1>:" << std::endl << T2.getEigenvecs().col(2) << std::endl;
 }
