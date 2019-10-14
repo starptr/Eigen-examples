@@ -1,8 +1,6 @@
 #include <iostream>
 #include <Eigen/Dense>
 #include "LinearSystem.h"
-#include "LinearTransformation.h"
-#include "LinearTransformationSquare.h"
 
 #include "examples.h"
 
@@ -237,8 +235,7 @@ void exSolveLinearEq(){
     Eigen::VectorXf y = mat2.ldlt().solve(vec2);
     std::cout << "The solution is:\n" << y << std::endl;
     std::cout << "Use colPivHouseholderQr()\n";
-	std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
-	std::cout << std::endl;
+    std::cout << "The solution is:\n" << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
 }
 
 void exLinearLeastSquares(){
