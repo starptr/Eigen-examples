@@ -277,7 +277,9 @@ void exLinearLeastSquares(){
     std::cout << vec2 << std::endl;
     std::cout << "The least squares solution is:" << std::endl;
     std::cout << mat2.colPivHouseholderQr().solve(vec2) << std::endl;
-    std::cout << "This explains that the the solution is closest to y=0.3x+3.5" << std::endl << std::endl;
+    std::cout << "This explains that the the solution is closest to y=0.3x+3.5" << std::endl;
+    std::cout << "Use another way to solve the problem." << std::endl;
+    std::cout << (mat2.transpose() * mat2).ldlt().solve(mat2.transpose() * vec2) << std::endl << std::endl;
 
     std::cout << "--Using normal equations, which is normal" << std::endl;
     Eigen::MatrixXf mat3 = Eigen::MatrixXf(3, 2);
