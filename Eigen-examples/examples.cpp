@@ -309,3 +309,7 @@ void exCSVsolver() {
 	std::cout << ex_lin_sys.get_x() << std::endl;
 	std::cout << std::endl;
 }
+
+void exLinearTransformation() {
+
+}

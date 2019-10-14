@@ -36,4 +36,9 @@ Demonstrate linear system as CSV coefficient wrapper
 */
 void exCSVsolver();
 
+/*
+Demonstrate a geometrical interpretation of matricies using the custom LinearTransformation class
+*/
+void exLinearTransformation();
+
 #endif // !EXAMPLES

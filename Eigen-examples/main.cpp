@@ -18,4 +18,5 @@ int main()
 	exSolveLinearEq();
 	exLinearLeastSquares();
 	exCSVsolver();
+	exLinearTransformation();
 }
